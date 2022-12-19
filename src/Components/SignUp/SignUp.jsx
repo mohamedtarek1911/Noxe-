@@ -28,7 +28,7 @@ export default function SignUp() {
     setLoading(false);
     async function getData(Data) {
       let { data } = await axios.post(
-        `https://routeegypt.herokuapp.com/signup`,
+        `https://route-movies-api.vercel.app/signup`,
         Data
       );
       console.log(data);
