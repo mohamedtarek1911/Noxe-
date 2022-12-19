@@ -21,6 +21,7 @@ export default function Tv() {
     // console.log(data.selected);
     let number = await data.selected;
     setCurrentPage(number + 1);
+    ScrollUp();
     // console.log(currentPage);
   };
 
@@ -31,6 +32,10 @@ export default function Tv() {
 
     setTerms(data.results);
     console.log(data.results);
+  };
+
+  const ScrollUp = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   let getTrendingTv = async (Page) => {

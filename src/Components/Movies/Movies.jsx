@@ -22,6 +22,7 @@ export default function Movies() {
     // console.log(data.selected);
     let number = await data.selected;
     setCurrentPage(number + 1);
+    ScrollUp();
     // console.log(currentPage);
   };
 
@@ -33,6 +34,10 @@ export default function Movies() {
     setMovies(data.results);
   };
   // console.log(Movies);
+
+  const ScrollUp = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   let searchTerms = async (term) => {
     let { data } = await axios.get(
