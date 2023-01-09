@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
+  createHashRouter,
 } from "react-router-dom";
 import Home from "./Components/HOME/Home";
 import Movies from "./Components/Movies/Movies";
@@ -27,82 +28,46 @@ function ProtectedRootes(props) {
   }
 }
 
-let routes = createBrowserRouter([
+let routes = createHashRouter([
   {
     path: "/",
     element: <RootLayout />,
     children: [
       {
         index: true,
-        element: (
-          <ProtectedRootes>
-            <Home />
-          </ProtectedRootes>
-        ),
+        element: <Home />,
       },
       {
         path: "Home",
-        element: (
-          <ProtectedRootes>
-            <Home />
-          </ProtectedRootes>
-        ),
+        element: <Home />,
       },
       {
         path: "Movies",
-        element: (
-          <ProtectedRootes>
-            <Movies />
-          </ProtectedRootes>
-        ),
+        element: <Movies />,
       },
       {
         path: "Tv",
-        element: (
-          <ProtectedRootes>
-            <Tv />
-          </ProtectedRootes>
-        ),
+        element: <Tv />,
       },
       {
         path: "People",
-        element: (
-          <ProtectedRootes>
-            <People />
-          </ProtectedRootes>
-        ),
+        element: <People />,
       },
       {
         path: "About",
-        element: (
-          <ProtectedRootes>
-            <About />
-          </ProtectedRootes>
-        ),
+        element: <About />,
       },
       {
         path: "Network",
-        element: (
-          <ProtectedRootes>
-            <Network />
-          </ProtectedRootes>
-        ),
+        element: <Network />,
       },
       {
         path: "Datails/:id/:media",
-        element: (
-          <ProtectedRootes>
-            <Details />
-          </ProtectedRootes>
-        ),
+        element: <Details />,
       },
       {
         path: "PerDatails/:id/:media",
-        element: (
-          <ProtectedRootes>
-            <PerDetails />
-          </ProtectedRootes>
-        ),
+        element: <PerDetails />,
       },
       { path: "*", element: <NotFound /> },
     ],

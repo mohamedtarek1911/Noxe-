@@ -11,7 +11,7 @@ export default function Details() {
     let { data } = await axios.get(
       `https://api.themoviedb.org/3/${media}/${id}?api_key=b743efb40c92290c908bcb203dd71625&language=en-US`
     );
-    // console.log(data);
+    console.log(data);
     setDetails(data);
   };
   console.log(Datails);
@@ -30,6 +30,7 @@ export default function Details() {
     name,
     genres,
     original_title,
+    homepage,
   } = Datails;
 
   //   console.log(genres[0].name);
@@ -73,11 +74,16 @@ export default function Details() {
               <div>
                 <p className="lead text-white">{overview}</p>
               </div>
+              <a target={"_blank"} href={homepage} className="btn btn-info">
+                Home Page
+              </a>
             </div>
           </div>
         </div>
       ) : (
-        <Loading />
+        <div className="d-flex text-center justify-content-center align-content-center align-items-center m-auto">
+          <Loading />
+        </div>
       )}
     </>
   );

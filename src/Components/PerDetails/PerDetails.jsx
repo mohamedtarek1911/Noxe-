@@ -11,7 +11,7 @@ export default function PerDetails() {
     let { data } = await axios.get(
       `https://api.themoviedb.org/3/${media}/${id}?api_key=b743efb40c92290c908bcb203dd71625&language=en-US`
     );
-    // console.log(data);
+    console.log(data);
     setDetails(data);
   };
   console.log(Datails);
@@ -79,7 +79,9 @@ export default function PerDetails() {
           </div>
         </div>
       ) : (
-        <Loading />
+        <div className="d-flex text-center justify-content-center align-content-center align-items-center m-auto">
+          <Loading />
+        </div>
       )}
     </>
   );

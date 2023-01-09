@@ -69,24 +69,6 @@ export default function Navbar(props) {
                       People
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink
-                      className="nav-link active"
-                      aria-current="page"
-                      to="/About"
-                    >
-                      About
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink
-                      className="nav-link active"
-                      aria-current="page"
-                      to="/Network"
-                    >
-                      NetWork
-                    </NavLink>
-                  </li>
                 </>
               ) : (
                 <>
@@ -115,14 +97,14 @@ export default function Navbar(props) {
               {!props.Auth ? (
                 <>
                   <li>
-                    <input
+                    {/* <input
                       type="text"
                       placeholder="searching..."
                       className="form-control"
                       onChange={({ target }) => {
                         dsipatcher(setKeyword(target.value));
                       }}
-                    />
+                    /> */}
                   </li>
                   <li className="nav-item">
                     <NavLink

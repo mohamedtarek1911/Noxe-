@@ -36,54 +36,61 @@ export default function Home() {
 
   return (
     <>
-      {/* {keyword} */}
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4">
-            <div>
-              <div className="brdr w-25"></div>
-              <h2>
-                Trending
-                <br /> Movies
-                <br /> to Watch now
-              </h2>
-              <p className="pColor"> most watched movies by days</p>
-              <div className="brdr w-100"></div>
+      {Movies.length > 0 ? (
+        <>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-4">
+                <div>
+                  <div className="brdr w-25"></div>
+                  <h2>
+                    Trending
+                    <br /> Movies
+                    <br /> to Watch now
+                  </h2>
+                  <p className="pColor"> most watched movies by days</p>
+                  <div className="brdr w-100"></div>
+                </div>
+              </div>
+              {Movies.length > 0 ? (
+                Movies.map((val, index) => {
+                  return <Item data={val} key={index}></Item>;
+                })
+              ) : (
+                <Loading />
+              )}
             </div>
           </div>
-          {Movies.length > 0 ? (
-            Movies.map((val, index) => {
-              return <Item data={val} key={index}></Item>;
-            })
-          ) : (
-            <Loading />
-          )}
-        </div>
-      </div>
 
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4">
-            <div>
-              <div className="brdr w-25"></div>
-              <h2>
-                Trending
-                <br /> TV
-                <br /> to Watch now
-              </h2>
-              <p className="pColor"> most watched tv-show by days</p>
-              <div className="brdr w-100"></div>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-4">
+                <div>
+                  <div className="brdr w-25"></div>
+                  <h2>
+                    Trending
+                    <br /> TV
+                    <br /> to Watch now
+                  </h2>
+                  <p className="pColor"> most watched tv-show by days</p>
+                  <div className="brdr w-100"></div>
+                </div>
+              </div>
+              {Tv.length > 0 ? (
+                Tv.map((val, index) => {
+                  return <Item data={val} key={index}></Item>;
+                })
+              ) : (
+                <Loading />
+              )}
             </div>
           </div>
-          {Tv.length > 0 ? (
-            Tv.map((val, index) => {
-              return <Item data={val} key={index}></Item>;
-            })
-          ) : (
-            <Loading />
-          )}
+        </>
+      ) : (
+        <div className="d-flex justify-content-center align-content-center align-items-center text-center">
+          <Loading />
         </div>
-      </div>
+      )}
     </>
   );
 }
